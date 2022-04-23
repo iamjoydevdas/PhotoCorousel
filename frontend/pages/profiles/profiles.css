@@ -1,0 +1,20 @@
+.Progress,
+.ProgressBar {
+    height: 3px;
+}
+
+.Progress {
+    background-color: gray;
+}
+
+.ProgressBar {
+    background-color: green;
+}
+
+.FileUpload {
+    border: 1px solid gray;
+    border-radius:2px;
+    max-width: 300px;
+    margin: auto;
+    padding: 12px 24px ;
+}

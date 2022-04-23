@@ -1,9 +1,9 @@
+import HomeMenu from "./menu";
 
 const HomePage = ({children}) => {
   return (
     <body>
-
-      Photo Album App
+        <HomeMenu />
         {children}
      </body>
   );

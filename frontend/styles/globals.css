@@ -1,0 +1,12 @@
+.Show {
+    display: initial;
+}
+
+.Hide {
+    display: none !important;
+}
+
+.Margin-40 {
+    margin: 40px;
+    border: 1px solid lightgrey;
+}
