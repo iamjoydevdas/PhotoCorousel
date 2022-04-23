@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import { Fragment, useState } from 'react';
 import {IPhoto} from '../../models/models'
 import {http} from '../../helpers/RestInterceptor'
+import { Carousel } from 'react-responsive-carousel';
 
 const Registrarion = () => {
   const router = useRouter()
@@ -20,16 +21,16 @@ const Registrarion = () => {
     <Fragment>
       <Container>
           Hello {albumId}
+                <Carousel interval="5000" transitionTime="5000">
+                { photos.map((pic: IPhoto, index: number) => {
+                    return  <div>
+                               <img src={pic.url} />
+                                <p className="legend">{pic.title}</p>
+                            </div>
+                  })}
 
-          {photos.map((pic: IPhoto, index: number) => {
-              return  <div>
-                        <div style={{float: 'left'}}>
-                          
-                          <p>{pic.title}</p>
-                          <p>{pic.url}</p>
-                        </div>
-                      </div>
-            })}
+
+                </Carousel>
 
       </Container>
     </Fragment>
