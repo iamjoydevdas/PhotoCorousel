@@ -5,9 +5,11 @@ import { Fragment, useState } from 'react';
 import {http} from '../helpers/RestInterceptor'
 import {IAlbum} from '../models/models'
 import { Image, Table } from 'react-bootstrap';
+import { useRouter } from 'next/router';
+import { route } from 'next/dist/server/router';
 
 const Home: NextPage = () => {
-
+  const router = useRouter()
   const [albums, setAlbums] = useState<IAlbum[]>([]);
 
   http
@@ -16,7 +18,10 @@ const Home: NextPage = () => {
       setAlbums(response.data);
     })
     
+    const handleClick = (id: string) => {
 
+      router.push("/photo/"+id);
+    }
 
   return (
     <div >
@@ -37,7 +42,7 @@ const Home: NextPage = () => {
                             <Image
                                     src=
                             "https://media.geeksforgeeks.org/wp-content/uploads/20210425000233/test-300x297.png"
-                                    thumbnail
+                                    thumbnail onClick={() => handleClick(album.id)}
                                   /></td>
                            
                           <td> 
