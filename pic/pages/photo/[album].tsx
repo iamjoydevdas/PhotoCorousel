@@ -11,7 +11,7 @@ const Registrarion = () => {
   const [photos, setPhotos] = useState<IPhoto[]>([]);
 
   http
-    .get<IPhoto[]>('https://jsonplaceholder.typicode.com/albums?_start=0&_limit=5',)
+    .get<IPhoto[]>('https://jsonplaceholder.typicode.com/photos?albumId='+albumId)
     .then((response) => {
       setPhotos(response.data);
     })
